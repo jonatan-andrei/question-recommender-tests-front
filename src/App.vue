@@ -1,47 +1,75 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+  <div id="app">
+    <div id="nav">
+      <router-link to="/"><img alt="Best Answer logo" src="./assets/best-answer-logo.png" /></router-link>
+      <router-link class="grid-item" to="/">Home</router-link>
+      <router-link class="grid-item" to="/perguntar"
+        >Fazer uma pergunta</router-link
+      >
+      <router-link
+        class="grid-item"
+        v-if="!$root.shared.nomeUsuario"
+        to="/login"
+        >Login</router-link
+      >
+      <router-link
+        class="grid-item"
+        v-if="!$root.shared.nomeUsuario"
+        to="/cadastro"
+        >Cadastro</router-link
+      >
+      <div class="grid-item" v-if="$root.shared.nomeUsuario">
+        Olá, {{ $root.shared.nomeUsuario }} - <a @click="logout()">Logout</a>
+      </div>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+    <router-view />
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<script>
+export default {
+  name: "Best Answer",
+  created() {
+    document.title = "Best Answer";
+  },
+  methods: {
+    logout: function () {
+      this.$root.shared.nomeUsuario = null;
+      localStorage.removeItem("jwtToken");
+    },
+  },
+};
+</script>
+
+<style>
+body {
+  background-color: #e9f2ef;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+#nav {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+#nav .grid-item {
+  padding: 20px;
+  font-size: 25px;
+  text-align: center;
+  padding-top: 40px;
+  font-weight: bold;
+  color: #3f51b5;
+  text-decoration: none;
+}
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+#nav a.router-link-exact-active {
+  color: #77c06c;
 }
 </style>
