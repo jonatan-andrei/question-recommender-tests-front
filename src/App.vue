@@ -1,26 +1,11 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/"><img alt="Best Answer logo" src="./assets/best-answer-logo.png" /></router-link>
-      <router-link class="grid-item" to="/">Home</router-link>
-      <router-link class="grid-item" to="/perguntar"
-        >Fazer uma pergunta</router-link
-      >
-      <router-link
-        class="grid-item"
-        v-if="!$root.shared.nomeUsuario"
-        to="/login"
-        >Login</router-link
-      >
-      <router-link
-        class="grid-item"
-        v-if="!$root.shared.nomeUsuario"
-        to="/cadastro"
-        >Cadastro</router-link
-      >
-      <div class="grid-item" v-if="$root.shared.nomeUsuario">
-        Olá, {{ $root.shared.nomeUsuario }} - <a @click="logout()">Logout</a>
+    <div class="logo">
+        <router-link to="/"><img alt="Question Recommender logo" src="../public/logo.png" /></router-link>
       </div>
+    <div id="nav">
+      <router-link class="grid-item" to="/">Home</router-link>
+      <router-link class="grid-item" to="/perguntar">Fazer uma pergunta</router-link>
     </div>
     <router-view />
   </div>
@@ -28,22 +13,21 @@
 
 <script>
 export default {
-  name: "Best Answer",
+  name: "QuestionRecommender",
   created() {
-    document.title = "Best Answer";
-  },
-  methods: {
-    logout: function () {
-      this.$root.shared.nomeUsuario = null;
-      localStorage.removeItem("jwtToken");
-    },
-  },
+    document.title = "Question Recommender";
+  }
 };
 </script>
 
 <style>
 body {
-  background-color: #e9f2ef;
+  background-color: #ffffff;
+}
+
+.logo {
+  text-align: center;
+  padding: 20px;
 }
 
 #app {
