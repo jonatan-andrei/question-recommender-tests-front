@@ -3,10 +3,6 @@
     <div class="logo">
         <router-link to="/"><img alt="Question Recommender logo" src="../public/logo.png" /></router-link>
       </div>
-    <div id="nav">
-      <router-link class="grid-item" to="/">Home</router-link>
-      <router-link class="grid-item" to="/perguntar">Fazer uma pergunta</router-link>
-    </div>
     <router-view />
   </div>
 </template>
@@ -37,23 +33,4 @@ body {
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
-  display: grid;
-  grid-template-columns: auto auto auto auto auto;
-}
-
-#nav .grid-item {
-  padding: 20px;
-  font-size: 25px;
-  text-align: center;
-  padding-top: 40px;
-  font-weight: bold;
-  color: #3f51b5;
-  text-decoration: none;
-}
-
-#nav a.router-link-exact-active {
-  color: #77c06c;
-}
 </style>

@@ -1,9 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import PerguntaDetalhe from '../views/PerguntaDetalhe.vue'
-import Login from '../views/Login.vue'
-import Cadastro from '../views/Cadastro.vue'
+import ResultadoTeste from '../views/ResultadoTeste.vue'
 
 Vue.use(VueRouter)
 
@@ -14,24 +12,9 @@ const routes = [
     component: Home
   },
   {
-    path: '/perguntar',
-    name: 'Fazer uma pergunta',
-    component: () => import(/* webpackChunkName: "about" */ '../views/FazerPergunta.vue')
-  },
-  {
-    path: '/pergunta/:id',
-    name: 'Pergunta',
-    component: PerguntaDetalhe
-  },
-  {
-    path: '/login',
-    name: 'Login',
-    component: Login
-  },
-  {
-    path: '/cadastro',
-    name: 'Cadastro',
-    component: Cadastro
+    path: '/resultado/:id',
+    name: 'ResultadoTeste',
+    component: ResultadoTeste
   }
 ]
 
