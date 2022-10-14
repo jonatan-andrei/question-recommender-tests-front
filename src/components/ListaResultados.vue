@@ -56,7 +56,7 @@ export default {
 }
 
 #resultados td a {
-  color: #2c3e50;
+  color: #04AA6D;
   text-decoration: none;
 }
 

@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import ResultadoTeste from '../views/ResultadoTeste.vue'
+import ResultadoUsuarioTeste from '../views/ResultadoUsuarioTeste.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes = [
     path: '/resultado/:id',
     name: 'ResultadoTeste',
     component: ResultadoTeste
+  },
+  {
+    path: '/resultado/usuario/:id',
+    name: 'ResultadoUsuarioTeste',
+    component: ResultadoUsuarioTeste
   }
 ]
 
