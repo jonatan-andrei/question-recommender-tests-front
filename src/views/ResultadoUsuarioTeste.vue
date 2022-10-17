@@ -28,6 +28,6 @@ export default {
   
 <style scoped>
 .resultado-json {
-  padding: 60px 200px 0px 200px;
+  padding: 60px 200px 50px 200px;
 }
 </style>
