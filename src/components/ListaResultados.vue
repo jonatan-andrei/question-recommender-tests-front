@@ -3,6 +3,7 @@
     <tr>
       <th>Id</th>
       <th>Dump (percentual)</th>
+      <th>Configuração</th>
       <th>Data</th>
       <th>Usuários</th>
       <th>Perguntas</th>
@@ -16,6 +17,7 @@
         </router-link>
       </td>
       <td>{{ item.dumpName }} ({{ item.integratedDumpPercentage }}%)</td>
+      <td>{{ item.settingsModel }}</td>
       <td>{{ item.testDate }}</td>
       <td>{{ item.numberOfUsers }}</td>
       <td>{{ item.numberOfQuestions }}</td>

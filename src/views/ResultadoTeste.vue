@@ -3,6 +3,7 @@
 
     <p>Dump (percentual): {{ resultadoTeste.dumpName }} ({{ resultadoTeste.integratedDumpPercentage }}%)</p>
     <p>Data: {{ resultadoTeste.testDate }}</p>
+    <p>Configuração: {{ resultadoTeste.settingsModel }}</p>
     <p>Usuários: {{ resultadoTeste.numberOfUsers }}</p>
     <p>Perguntas: {{ resultadoTeste.numberOfQuestions }}</p>
     <p>Recomendações: {{ resultadoTeste.numberOfRecommendedQuestions }}</p>
