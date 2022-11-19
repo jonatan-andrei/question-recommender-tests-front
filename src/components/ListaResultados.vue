@@ -9,6 +9,7 @@
       <th>Perguntas</th>
       <th>Recomendações</th>
       <th>Percentual de acerto</th>
+      <th>Melhoria percentual</th>
     </tr>
     <tr v-for="item in testes" :key="item.testResultId">
       <td>
@@ -23,6 +24,7 @@
       <td>{{ item.numberOfQuestions }}</td>
       <td>{{ item.numberOfRecommendedQuestions }}</td>
       <td>{{ item.percentageOfCorrectRecommendations }}</td>
+      <td>{{ item.percentageIncreaseOfCorrectRecommendations }}</td>
     </tr>
   </table>
 </template>

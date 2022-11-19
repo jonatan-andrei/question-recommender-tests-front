@@ -7,7 +7,9 @@
     <p>Usuários: {{ resultadoTeste.numberOfUsers }}</p>
     <p>Perguntas: {{ resultadoTeste.numberOfQuestions }}</p>
     <p>Recomendações: {{ resultadoTeste.numberOfRecommendedQuestions }}</p>
+    <p>Percentual original: {{ resultadoTeste.percentageOfQuestionsAnsweredWithoutRecommendations }}</p>
     <p>Percentual de acerto: {{ resultadoTeste.percentageOfCorrectRecommendations }}</p>
+    <p>Percentual de melhoria: {{ resultadoTeste.percentageIncreaseOfCorrectRecommendations }}</p>
     <table id="usuarios">
       <tr>
         <th>Usuário</th>
